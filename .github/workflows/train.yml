@@ -11,7 +11,8 @@ jobs:
           repo_token: ${{ secrets.SECRET_GITHUB_TOKEN }}
         run: |
           pip install -r requirements.txt
-          dvc repro 
+          dvc pull data --run-cache
+          dvc repro
 
           git fetch --prune
           dvc metrics diff --show-md main > report.md
