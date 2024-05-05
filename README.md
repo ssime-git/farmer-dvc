@@ -65,7 +65,7 @@ make train
 
 After the training, you will see 2 files in the report folder.
 
-## Initaite and run the pipeline
+## Initiate and run the pipeline
 
 ```sh
 # remove tracking on data folder
