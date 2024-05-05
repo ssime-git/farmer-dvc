@@ -1,4 +1,4 @@
-dvc
+dvc==3.50.1
 wget
 scikit-learn
 pandas
