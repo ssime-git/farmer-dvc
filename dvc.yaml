@@ -22,5 +22,5 @@ stages:
     outs:
       - report/by_region.png
     metrics:
-      - report/metrics.json:
+      - report/metrics.json
           cache: false
