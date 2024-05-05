@@ -1,5 +1,4 @@
 dvc
-wget
 scikit-learn
 pandas
 seaborn

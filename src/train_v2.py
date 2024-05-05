@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
-from sklearn.linear_model import LogisticRegression
+#from sklearn.linear_model import LogisticRegression
+from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
 from sklearn.preprocessing import scale
 from sklearn.model_selection import cross_val_predict
 from sklearn.metrics import confusion_matrix
@@ -19,7 +20,7 @@ def preprocess_features(X):
     return imp.transform(X_scaled)
 
 def train_and_evaluate_model(X, y):
-    clf = LogisticRegression()
+    clf = QuadraticDiscriminantAnalysis() # change from LogisticRegression()
     yhat = cross_val_predict(clf, X, y, cv=5)
     acc = np.mean(yhat == y)
     tn, fp, fn, tp = confusion_matrix(y, yhat).ravel()
