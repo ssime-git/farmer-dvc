@@ -21,3 +21,16 @@ make install
 
 3. Get data and init dvc tracking
 
+```sh
+# ini dvc
+make init-dvc
+
+# get data
+make get-data
+
+# track data
+make track-raw-data
+
+# track-metadata
+```
+

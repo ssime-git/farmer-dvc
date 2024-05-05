@@ -11,16 +11,14 @@ init-dvc:
 get-data:
 	python3 src/get_data_v2.py
 
-track-data:
-	dvc add src/data
-	dvc commit -m "track data"
+track-raw-data:
+	dvc add data
 
-track-code-and-metadata:
+track-metadata:
 	git add .
-	git commit -m "track metadata"
+	git commit -m "track data metadata"
 	git push
 
 push-data:
 	dvc push
 
-track : init-dvc get-data track-data track-code-and-metadata push-data
