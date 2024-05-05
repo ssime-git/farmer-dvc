@@ -1,5 +1,7 @@
 # farmer-dvc
-Use DVC for farmer prediction
+Use DVC for farmer prediction.
+
+The purpose of this repo is to show how to compare metrics accross different git branches with DVC.
 
 ## Data source
 
