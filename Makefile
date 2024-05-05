@@ -12,9 +12,9 @@ get-data:
 	python3 src/get_data_v2.py
 
 track-raw-data:
-	dvc add data
+	dvc add data/data_raw.csv
 
-track-metadata:
+track-git-change:
 	git add .
 	git commit -m "track data metadata"
 	git push
@@ -22,3 +22,16 @@ track-metadata:
 push-data:
 	dvc push
 
+process-data:
+	python3 src/process_data_v2.py
+
+track-processed-data:
+	dvc add data/data_processed.csv
+
+train:
+	python3 src/train_v2.py
+
+track-data-change: track-raw-data track-git-change push-data
+
+init-pipeline:
+	dvc stage add -n get_data -d src/get_data_v2.py -o data/data_raw.csv python3 src/get_data_v2.py
